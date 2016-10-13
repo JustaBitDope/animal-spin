@@ -1,0 +1,90 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(#c9defc, #65a2f7);
+  /*background-color: #65a2f7;*/
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0px;
+  border-radius: 500px; /* Make it a circle */
+
+  /* Centre stuff inside it! */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  -webkit-transition: all 1s ease-out 0s;
+  -moz-transition: all 1s ease-out 0s;
+  -ms-transition: all 1s ease-out 0s;
+  -o-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+}
+
+.sun:hover {
+  -webkit-transition: all 0.5s ease-out 0s;
+  -moz-transition: all 0.5s ease-out 0s;
+  -ms-transition: all 0.5s ease-out 0s;
+  -o-transition: all 0.5s ease-out 0s;
+  transition: all 0.5s ease-out 0s;
+  background-color: orange;
+}
+
+.sun:selected {
+  
+}
+
+.zoo {}
+
+.animals {
+  /* This ensures that animals are positioned relative to
+    .animals. i.e. if .animals is moved then all the 
+    .animal images inside it will also move.
+    (This is to counteract the position: absolute; on .animal)
+  */
+  width: 80px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; 
+  /*background-color: #338855;/**/
+}
+
+.animal {
+  width: 80px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  transform-origin: 50% 100%;
+  /* Animation! Woo! */
+  animation-timing-function: linear;
+  /* This is set in the JavaScript
+  animation-iteration-count: infinite;
+  animation-name: spin; 
+  animation-duration: 10s;
+  animation-delay:;
+  */
+}
+
+@keyframes spin {
+  0%   {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.paused{
+    -webkit-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -o-animation-play-state:paused; 
+    animation-play-state:paused;
+}
